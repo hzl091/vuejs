@@ -1,8 +1,12 @@
 <html>
   <body>
-    <div id="app" v-text="msg">
-	
-	<div v-text="show"></div>
+    <div id="app">
+		<div>{{msg}} - {{show}}</div>
+		<ol>
+			<li v-for='line in lines'>
+				{{ line.id }} - {{ line.name }}
+			</li>
+		</ol>
 	</div>
 	
 	
@@ -13,7 +17,11 @@
 			el : "#app",
 			data : {
 				msg : "hello",
-				show: "welcome"
+				show: "welcome",
+				lines : [
+				   {id : '123', name: 'zhangsan'},
+				   {id : '234', name: 'wangwu'}
+				]
 			}
 		})
 	</script>
